@@ -1,0 +1,230 @@
+/* ChatApp.css - VS Code-inspired Dark Theme with Centered Layout */
+
+/* Define color variables */
+:root {
+  --background: #161616;    /* Black background */
+  --foreground: #EDDBFF;    /* Light purple text */
+  --accent: #7C01F6;        /* Purple accent for buttons & interactive elements */
+  --secondary: #C8C8C8;     /* Grey for borders, placeholders, secondary text */
+  --input-bg: #1F1F1F;      /* Slightly lighter dark for input backgrounds */
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Consolas', 'Courier New', monospace;
+  background-color: var(--background);
+  color: var(--foreground);
+  /* line-height: 1.6; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+/* Container - centers all content */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navigation (optional) */
+nav {
+  background-color: var(--background);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--secondary);
+  width: 100%;
+}
+
+nav a {
+  color: var(--foreground);
+  margin: 0 20px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--foreground);
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+  background-color: var(--accent);
+  color: var(--foreground);
+  border: none;
+  margin: 2px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(22, 22, 22, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--foreground);
+  color: var(--background);
+  box-shadow: 0 4px 8px rgba(22, 22, 22, 0.6);
+}
+
+/* Form Elements */
+input,
+textarea,
+select {
+  background-color: var(--input-bg);
+  border: 2px solid var(--secondary);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  color: var(--foreground);
+  margin-bottom:7px;
+  transition: border-color 0.3s ease;
+  text-align: center;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--secondary);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Cards / Panels */
+.card {
+  background-color: var(--input-bg);
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(22, 22, 22, 0.5);
+}
+
+/* Chat Window */
+.chat-window {
+  background-color: var(--input-bg);
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 5px;
+  overflow-y: auto;
+  height: 300px;
+
+  max-height: 300px;
+  width: 100%;
+  /* width: 300px; */
+
+  max-width: 400px;
+}
+
+/* Chat Messages */
+.message-container{
+  display: flex;
+}
+.message {
+  padding: 10px 15px;
+  margin: 3px; /* Remove auto centering */
+  border-radius: 12px;
+  max-width: 50%;
+  word-wrap: break-word;
+  font-size: 1rem;
+}
+
+.message.sent {
+  background-color: var(--accent);
+  color: var(--secondary);
+  text-align: right;
+  margin-left: auto;  /* Push message to the right */
+  margin-right: 0;
+}
+
+.message.received {
+  background-color: var(--secondary);
+  color: var(--background);
+  text-align: left;
+  margin-right: auto; /* Push message to the left */
+  margin-left: 0;
+}
+
+/* Form Section */
+.form-section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Utility Class */
+.text-center {
+  text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  nav {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  
+  nav a {
+    margin: 10px 0;
+  }
+  
+}
+
+@media  screen and (max-width: 500px) {
+  .message{
+    max-width: 150px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  
+}
+
+@media screen and (min-width: 600px) {
+  .chat-window{
+    width: 400px;
+  }
+}
