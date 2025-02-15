@@ -1,8 +1,8 @@
-# React + Vite
+# Real Time Frontend: Built with React, Strapi and Sockets.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This Chat app has been built using ReactJS, Sockets.io and Strapi.
 
-Currently, two official plugins are available:
+Strapi server and socket servers are deployed on two different servers and hence have different repos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Socket Server: [https://github.com/apaul2077/real-time-chat-socket-server](https://github.com/apaul2077/real-time-chat-socket-server) 
+- Strapi Server: [https://github.com/apaul2077/real-time-chat-strapi-server](https://github.com/apaul2077/real-time-chat-strapi-server) 

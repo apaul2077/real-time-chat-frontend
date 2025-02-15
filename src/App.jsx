@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 import Login from './components/Login';
 import './App.css'; // Import external CSS
 
-const SOCKET_URL = 'http://localhost:8080';
+const SOCKET_URL = 'https://real-time-chat-socket-server.onrender.com';
 
 function App() {
   // Authentication & Socket state
@@ -23,7 +23,7 @@ function App() {
   const [messageInput, setMessageInput] = useState('');
 
   // Dropdown switch for chat mode: "private" or "server"
-  const [chatMode, setChatMode] = useState('private');
+  const [chatMode, setChatMode] = useState('server');
 
   // Key to store/retrieve conversation from localStorage
   const getConversationKey = (recipient) => {
@@ -68,6 +68,7 @@ function App() {
       const newSocket = io(SOCKET_URL, {
         auth: { token: jwt, username: user.username },
         transports: ['websocket'],
+        withCredentials: true
       });
       setSocket(newSocket);
 
@@ -100,6 +101,7 @@ function App() {
     setJwt(token);
     localStorage.setItem('token', token);
     localStorage.setItem('user', JSON.stringify(userData));
+    alert("Please note: The first few messages may take a bit of time to appear due to server lag.")
   };
 
   // Logout handler.
